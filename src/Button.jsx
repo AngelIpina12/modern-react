@@ -12,7 +12,7 @@ export const Button = ({
     rounded,
 }) => {
     return (
-        <button>{children}</button>
+        <button className='bg-blue-200'>{children}</button>
     )
 }
 Button.propTypes = {
