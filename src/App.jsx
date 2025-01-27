@@ -7,19 +7,19 @@ function App() {
   return (
     <>
       <div>
-        <Button success primary>Click me!!!</Button>
+        <Button primary rounded outline>Click me!!!</Button>
       </div>
       <div>
-        <Button>fgfdsgds</Button>
+        <Button secondary outline>fgfdsgds</Button>
       </div>
       <div>
-        <Button>gfdsgdsg</Button>
+        <Button success>gfdsgdsg</Button>
       </div>
       <div>
-        <Button>gfdgfds</Button>
+        <Button warning>gfdgfds</Button>
       </div>
       <div>
-        <Button>hydnhf</Button>
+        <Button danger>hydnhf</Button>
       </div>
     </>
   )
