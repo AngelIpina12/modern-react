@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { GoBell, GoCloudDownload, GoDatabase } from 'react-icons/go'
 import { Button } from './Button'
 
 function App() {
@@ -7,13 +8,13 @@ function App() {
   return (
     <>
       <div>
-        <Button primary rounded outline>Click me!!!</Button>
+        <Button primary rounded outline><GoBell></GoBell>Click me!!!</Button>
       </div>
       <div>
-        <Button secondary outline>fgfdsgds</Button>
+        <Button secondary outline><GoCloudDownload></GoCloudDownload>fgfdsgds</Button>
       </div>
       <div>
-        <Button success>gfdsgdsg</Button>
+        <Button success><GoDatabase></GoDatabase>gfdsgdsg</Button>
       </div>
       <div>
         <Button warning>gfdgfds</Button>
