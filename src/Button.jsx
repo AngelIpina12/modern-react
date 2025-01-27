@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export const Button = ({
     children,
@@ -10,8 +11,25 @@ export const Button = ({
     outline,
     rounded,
 }) => {
-    
-  return (
-    <button>{children}</button>
-  )
+    return (
+        <button>{children}</button>
+    )
+}
+Button.propTypes = {
+    checkVariationValue: ({
+        primary,
+        secondary,
+        success,
+        warning,
+        danger,
+    }) => {
+        const count = Number(!!primary)
+            + Number(!!secondary)
+            + Number(!!success)
+            + Number(!!warning)
+            + Number(!!danger)
+        if(count > 1) {
+            return new Error('Only one variation can be used at a time')
+        }
+    }
 }
