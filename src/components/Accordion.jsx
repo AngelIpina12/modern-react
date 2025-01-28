@@ -1,16 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { GoChevronDown, GoChevronLeft } from 'react-icons/go'
 
 export const Accordion = ({ items }) => {
-    const renderedItems = items.map((item) => {
+    const [expandedIndex, setExpandedIndex] = useState(-1);
+    const handleClick = (index) => {
+        if (expandedIndex === index) {
+            setExpandedIndex(-1)
+        } else {
+            setExpandedIndex(index)
+        }
+    }
+    const renderedItems = items.map((item, index) => {
+        const isExpanded = index === expandedIndex;
+        const icon = <span className='text-xl'>
+            {isExpanded ? <GoChevronDown /> : <GoChevronLeft />}
+        </span>
+
         return (
             <div key={item.id}>
-                <div>{item.label}</div>
-                <div>{item.content}</div>
+                <div className='flex justify-between p-3 bg-gray-50 border-b items-center cursor-pointer' onClick={() => handleClick(index)}>{item.label}{icon}</div>
+                {isExpanded && <div className='border-b p-5'>{item.content}</div>}
             </div>
         )
     })
 
+
     return (
-        <div>{renderedItems}</div>
+        <div className='border-x border-t rounded'>{renderedItems}</div>
     )
 }
