@@ -1,29 +1,23 @@
-import { useState } from 'react'
-import { GoBell, GoCloudDownload, GoDatabase } from 'react-icons/go'
-import { Button } from '../src/components/Button'
+import { Accordion } from "./components/Accordion"
 
-function App() {
-  const [count, setCount] = useState(0)
+export const App = () => {
+  const items = [
+    {
+      id: 1,
+      label: 'Can I use React on a project?',
+      content: 'You can use React on any project you want. It is a popular front-end library.'
+    },
+    {
+      id: 2,
+      label: 'Can I use JavaScript on a project?',
+      content: 'You can use JavaScript on any project you want. It is a popular programming language.'
+    },
+    {
+      id: 3,
+      label: 'Can I use HTML on a project?',
+      content: 'You can use HTML on any project you want. It is a popular markup language'
+    }
+  ]
 
-  return (
-    <>
-      <div>
-        <Button primary rounded outline><GoBell></GoBell>Click me!!!</Button>
-      </div>
-      <div>
-        <Button secondary outline><GoCloudDownload></GoCloudDownload>fgfdsgds</Button>
-      </div>
-      <div>
-        <Button success><GoDatabase></GoDatabase>gfdsgdsg</Button>
-      </div>
-      <div>
-        <Button warning>gfdgfds</Button>
-      </div>
-      <div>
-        <Button danger>hydnhf</Button>
-      </div>
-    </>
-  )
+  return <Accordion items={items} />
 }
-
-export default App
