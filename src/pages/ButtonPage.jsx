@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { GoBell, GoCloudDownload, GoDatabase } from 'react-icons/go'
-import { Button } from '../src/components/Button'
+import { Button } from '../components/Button'
 
-function App() {
+export const ButtonPage = () => {
   const [count, setCount] = useState(0)
 
   return (
@@ -25,5 +25,3 @@ function App() {
     </>
   )
 }
-
-export default App
