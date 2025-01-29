@@ -10,11 +10,15 @@ export const ModalPage = () => {
     const handleClose = () => {
         setShowModal(false);
     }
+    const actionBar = <Button onClick={handleClose} primary>I Accept</Button>
+    const modal = <Modal onClose={handleClose} actionBar={actionBar}>
+        <p>Here is an important agreement for you to accept</p>
+    </Modal>
 
     return (
         <div>
             <Button primary onClick={handleClick}>Open Modal</Button>
-            {showModal && <Modal onClose={handleClose} />}
+            {showModal && modal}
         </div>
     )
 }
