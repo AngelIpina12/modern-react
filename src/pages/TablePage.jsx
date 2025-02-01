@@ -30,8 +30,6 @@ export const TablePage = () => {
     }
 
     return (
-        <div>
             <SortableTable data={data} config={config} keyFn={keyFn}/>
-        </div>
     )
 }
